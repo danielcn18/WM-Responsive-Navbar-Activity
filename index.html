@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Responsive Navbar Activity</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #nav{
+            background-color: #383434;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 25px;
+            text-align: center;
+        }
+        #links>a{
+            padding: 40px;
+        }
+        .fa-bars{
+            background-color: #383434;
+            color: white;
+        }
+        #nav>#hamburger{
+            color: black;
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 20px;
+        }
+        @media screen and (max-width: 767px){
+            #nav>#links{
+                display: none;
+            }
+            #nav{
+                padding: 34px;
+            }
+            #links>a{
+                display: block;
+                padding: 5px;
+            }
+            #nav>#links.open{
+                display: block;
+            }
+            #nav.open{
+                padding: 45px 34px 26px 34px;
+                font-size: 28px;
+            }
+            #nav>#hamburger{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <div id="links">
+            <a>Home</a>
+            <a>Services</a>
+            <a>About Us</a>
+        </div>
+        <a href="javascript:void(0);" id="hamburger" onclick="displayMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <script>
+        function displayMenu(){
+            var nav = document.getElementById('nav');
+            var z = document.getElementById('links');
+            // toggle("open"), the 'open' can be named anything
+            // the toggle() method toggles between adding and removing one or more class/id names from the selected elements
+            z.classList.toggle('open');
+            nav.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
